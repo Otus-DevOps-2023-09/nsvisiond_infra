@@ -33,3 +33,23 @@ https://disk.yandex.ru/i/r6sKiN9RzOdgbQ
 bastion_IP = 51.250.77.142
 someinternalhost_IP = 10.128.0.14
 ```
+
+### Добавьте информацию о данном ДЗ в README.md и впишите данные для подключения в следующем формате (важно для автоматической проверки ДЗ), не удаляя предыдущую
+
+```
+testapp_IP = 51.250.90.84
+testapp_port = 9292
+```
+
+### В качестве доп. задания используйте созданные ранее скрипты для создания startup script , который будет запускаться при создании инстанса.
+
+```
+yc compute instance create \
+  --name reddit-app \
+  --hostname reddit-app \
+  --memory=4 \
+  --create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1604-lts,size=10GB \
+  --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4 \
+  --metadata-from-file user-data="/Users/kirk/PycharmProjects/nsvisiond_infra/startup_script.sh" \
+  --metadata serial-port-enable=1
+```
