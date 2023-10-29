@@ -53,3 +53,14 @@ yc compute instance create \
   --metadata-from-file user-data="/Users/kirk/PycharmProjects/nsvisiond_infra/startup_script.sh" \
   --metadata serial-port-enable=1
 ```
+### ДЗ 5. Сборка образов VM при помощи Packer
+
+- создана ветка packer-base
+- наработки предыдущего ДЗ перенесены в config-scripts
+- установлен Packer
+- создан сервисный аккаунт с соответствующими правами
+- собран baked-образ с Ruby и MongoDB (reddit-base, конфиг ubuntu16.json)
+- из образа вручную создана VM и задеплоено приложение
+- произведена параметризация настроек через variables.json
+- создан образ с задеплоенным приложением reddit (reddit-full, конфиг immutable.json)
+- создан скрипт create-reddit-vm.sh для создания VM с запущенным приложением через Yandex.Cloud CLI

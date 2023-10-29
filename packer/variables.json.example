@@ -1,0 +1,9 @@
+{
+    "folder_id": "<yandex_folder_id>",
+    "source_image_family": "ubuntu-1604-lts",
+    "reddit_image_family": "reddit-base",
+    "service_account_key_file": "<path to your key.json>",
+    "subnet_id": "<yandex_subnet_id>",
+    "zone": "ru-central1-a",
+    "platform_id": "standard-v1"
+}

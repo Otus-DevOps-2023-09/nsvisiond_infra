@@ -1,0 +1,30 @@
+{
+  "builders": [
+    {
+      "type": "yandex",
+      "service_account_key_file": "{{ user `service_account_key_file` }}",
+      "folder_id": "{{ user `folder_id` }}",
+      "source_image_folder_id": "{{ user `folder_id` }}",
+      "source_image_family": "{{ user `reddit_image_family` }}",
+      "image_name": "reddit-full-{{timestamp}}",
+      "image_family": "reddit-full",
+      "ssh_username": "ubuntu",
+      "platform_id": "{{ user `platform_id` }}",
+      "zone": "{{ user `zone` }}",
+      "subnet_id": "{{ user `subnet_id` }}",
+      "use_ipv4_nat": true
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "files/puma.service",
+      "destination": "~/puma.service"
+    },
+    {
+      "type": "shell",
+      "script": "scripts/install_reddit.sh",
+      "execute_command": "sudo {{.Path}}"
+    }
+  ]
+}
