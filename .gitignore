@@ -2,6 +2,7 @@
 
 /packer/variables.json
 
+yandex_init.tf
 *.tfstate
 *.tfstate.*.backup
 *.tfstate.backup
