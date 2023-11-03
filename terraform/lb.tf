@@ -16,7 +16,6 @@ resource "yandex_lb_target_group" "reddit-target-group" {
 
 resource "yandex_lb_network_load_balancer" "reddit-balancer" {
   name                = "reddit-balancer"
-  deletion_protection = "false"
   listener {
     name        = "reddit-balancer-listener"
     port        = 80
