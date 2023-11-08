@@ -12,7 +12,7 @@ variable "subnet_id" {
 }
 
 variable "env" {
-  type = string
+  type        = string
   description = "Environment"
 }
 

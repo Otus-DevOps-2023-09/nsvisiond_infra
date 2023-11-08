@@ -6,8 +6,8 @@ provider "yandex" {
 }
 
 module "vpc" {
-  source           = "../modules/vpc"
-  env              = "stage"
+  source = "../modules/vpc"
+  env    = "stage"
 }
 
 module "db" {

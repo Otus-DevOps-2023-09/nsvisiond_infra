@@ -12,12 +12,12 @@ variable "subnet_id" {
 }
 
 variable "env" {
-  type = string
+  type        = string
   description = "Environment"
 }
 
 variable "db_ip_address" {
-  type = string
+  type        = string
   description = "db_ip_address"
 }
 
@@ -26,7 +26,7 @@ variable "private_key_path" {
 }
 
 variable "need_provisioning" {
-  type = bool
+  type        = bool
   description = "need_provisioning"
-  default = true
+  default     = true
 }
