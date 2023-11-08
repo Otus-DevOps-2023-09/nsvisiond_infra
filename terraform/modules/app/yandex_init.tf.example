@@ -1,0 +1,9 @@
+#вынесен в отдельный файл example, для прохождения тестов. на проде нужно откопировать в yandex_init.tf
+terraform {
+  required_providers {
+    yandex = {
+      source = "yandex-cloud/yandex"
+    }
+  }
+  required_version = ">= 0.13"
+}
