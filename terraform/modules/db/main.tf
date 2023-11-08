@@ -38,4 +38,6 @@ resource "yandex_compute_instance" "db" {
   metadata = {
     ssh-keys = "ubuntu:${file(var.public_key_path)}"
   }
+
+  allow_stopping_for_update = true
 }

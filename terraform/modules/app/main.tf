@@ -24,6 +24,8 @@ resource "yandex_compute_instance" "app" {
     ssh-keys = "ubuntu:${file(var.public_key_path)}"
   }
 
+  allow_stopping_for_update = true
+
 }
 
 resource "null_resource" "app" {
