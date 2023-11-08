@@ -1,0 +1,11 @@
+cloud_id = "<YC cloud_id>"
+folder_id = "<YC folder_id>"
+zone = "ru-central1-a"
+image_id = "<YC image_id>"
+subnet_id = "<YC subnet_id>"
+public_key_path = "mocks/id_rsa.pub"
+private_key_path = "mocks/id_rsa"
+service_account_key_file = "mocks/key.json"
+region_id = "ru-central1"
+app_instances_count = 1
+app_disk_image = "reddit-app-base"

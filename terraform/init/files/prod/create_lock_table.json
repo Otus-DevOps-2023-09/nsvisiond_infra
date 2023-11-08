@@ -1,0 +1,17 @@
+{
+  "TableName": "prod/lock",
+  "AttributeDefinitions":
+  [
+    {
+      "AttributeName": "LockID",
+      "AttributeType": "S"
+    }
+  ],
+  "KeySchema":
+  [
+    {
+      "AttributeName": "LockID",
+      "KeyType": "HASH"
+    }
+  ]
+}

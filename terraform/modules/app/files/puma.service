@@ -9,6 +9,7 @@ User=ubuntu
 WorkingDirectory=/home/ubuntu/reddit
 ExecStart=/bin/bash -lc 'puma'
 Restart=always
+EnvironmentFile=/etc/puma.conf
 
 [Install]
 WantedBy=multi-user.target
