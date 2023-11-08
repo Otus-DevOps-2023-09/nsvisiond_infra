@@ -1,0 +1,4 @@
+cloud_id = "<YC cloud_id>"
+folder_id = "<YC folder_id>"
+service_account_id = "<YC service_account_id>"
+zone = "ru-central1-a"

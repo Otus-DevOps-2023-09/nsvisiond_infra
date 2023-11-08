@@ -8,3 +8,4 @@ private_key_path = "mocks/id_rsa"
 service_account_key_file = "mocks/key.json"
 region_id = "ru-central1"
 app_instances_count = 1
+app_disk_image = "reddit-app-base"
