@@ -19,3 +19,9 @@ variable "env" {
 variable "private_key_path" {
   description = "Path to the public key used for ssh access"
 }
+
+variable "need_provisioning" {
+  type        = bool
+  description = "need_provisioning"
+  default     = true
+}

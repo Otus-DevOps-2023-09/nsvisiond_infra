@@ -1,0 +1,22 @@
+---
+- name: Configure Packer DB
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install MongoDB
+      apt:
+        name:
+          - mongodb
+        state: present
+        update_cache: yes
+
+    - name: Start MongoDB
+      systemd:
+        name: mongodb
+        restarted: yes
+
+    - name: Enable MongoDB
+      systemd:
+        name: mongodb
+        enabled: yes

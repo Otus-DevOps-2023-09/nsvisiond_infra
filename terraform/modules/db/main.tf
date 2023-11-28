@@ -28,16 +28,23 @@ resource "yandex_compute_instance" "db" {
     private_key = file(var.private_key_path)
   }
 
+  metadata = {
+    ssh-keys = "ubuntu:${file(var.public_key_path)}"
+  }
+
+  allow_stopping_for_update = true
+}
+
+resource "null_resource" "db" {
+  count = (var.need_provisioning) ? 1 : 0
+
+  triggers = {
+    app_id = yandex_compute_instance.db.id
+  }
   provisioner "remote-exec" {
     inline = [
       "sudo sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongodb.conf",
       "sudo systemctl restart mongodb"
     ]
   }
-
-  metadata = {
-    ssh-keys = "ubuntu:${file(var.public_key_path)}"
-  }
-
-  allow_stopping_for_update = true
 }

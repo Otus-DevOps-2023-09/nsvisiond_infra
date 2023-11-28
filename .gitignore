@@ -8,3 +8,5 @@ yandex_init.tf
 *.tfstate.backup
 *.tfvars
 .terraform*
+
+*.retry
