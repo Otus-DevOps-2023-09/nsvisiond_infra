@@ -17,6 +17,7 @@ module "db" {
   subnet_id        = module.vpc.app_subnet_id
   env              = "prod"
   private_key_path = var.private_key_path
+  need_provisioning = var.need_provisioning
 }
 
 module "app" {
@@ -27,4 +28,5 @@ module "app" {
   env              = "prod"
   private_key_path = var.private_key_path
   db_ip_address    = module.db.external_ip_address_db
+  need_provisioning = var.need_provisioning
 }
